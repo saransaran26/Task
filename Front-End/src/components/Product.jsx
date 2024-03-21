@@ -59,7 +59,7 @@ function Product() {
         };
 
         const response = await axios.post(
-          "http://localhost:3000/postdata",
+          "https://task-l14o.onrender.com/postdata",
           payload
         );
 
@@ -82,7 +82,7 @@ function Product() {
           console.log("formdata", formData);
 
           const response = await axios.post(
-            "http://localhost:3000/update-upload",
+            "https://task-l14o.onrender.com/update-upload",
             formData
           );
 
@@ -106,7 +106,7 @@ function Product() {
 
   useEffect(()=>{
     const fetchdata = async()=>{
-      const res = await axios.get('http://localhost:3000')
+      const res = await axios.get('https://task-l14o.onrender.com')
       console.log("get data",res.data.data);
       // setdatas(res.data.data)
       setProductList(res.data.data)
@@ -121,7 +121,7 @@ function Product() {
 
   const handledatadelete = async(id)=>{
     console.log("handledatadelete",id);
-    const res = await axios.delete(`http://localhost:3000/delete/${id}`)
+    const res = await axios.delete(`https://task-l14o.onrender.com/delete/${id}`)
     setdel(!del)
     console.log("deleted");
     message.success("Product deleted successfully")
